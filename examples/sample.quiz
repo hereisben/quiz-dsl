@@ -1,0 +1,17 @@
+quiz {
+  title: "...";
+  description: "...";
+
+  question {
+    text: "...";
+    choice: "...";
+    choice: "...";
+    answer: 1;
+    difficulty: "easy";
+    tag: "...";
+  }
+
+  question {
+    ...
+  }
+}
