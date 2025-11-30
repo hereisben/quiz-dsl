@@ -4,15 +4,15 @@ from typing import List
 
 
 KEYWORDS = {
-    "QUIZ": "quiz",
-    "TITLE": "title",
-    "DESCRIPTION": "description",
-    "QUESTION": "question",
-    "TEXT": "text",
-    "CHOICE": "choice",
-    "ANSWER": "answer",
-    "DIFFICULTY": "difficulty",
-    "TAG": "tag",
+    "quiz": "QUIZ",
+    "TITLE": "TITLE",
+    "description": "DESCRIPTION",
+    "question": "QUESTION",
+    "TEXT": "TEXT",
+    "CHOICE": "CHOICE",
+    "ANSWER": "ANSWER",
+    "difficulty": "DIFFICULTY",
+    "tag": "TAG",
 }
 
 SYMBOLS = {
@@ -95,7 +95,7 @@ class Lexer:
 
             # Symbols
             if ch in SYMBOLS:
-                toks.append(SYMBOLS[ch], ch, start_line, start_col)
+                toks.append(Token(SYMBOLS[ch], ch, start_line, start_col))
                 self._advance(1)
                 continue
             
@@ -117,6 +117,8 @@ class Lexer:
             m = self._match(IDENT_RE)
             if m:
                 typ = KEYWORDS.get(m)
+                if typ is None:
+                    raise LexerError(f"Unknown identifier '{m}' at {start_line}:{start_col}")
                 toks.append(Token(typ, m, start_line, start_col))
                 self._advance(len(m))
                 continue
@@ -124,5 +126,5 @@ class Lexer:
             bad = self.src[self.pos]
             raise LexerError(f"Unexpected character '{bad}' at {start_line}:{start_col}")
         
-        toks.append(Token('EOF', '', start_line, start_col))
+        toks.append(Token('EOF', '', self.line, self.col))
         return toks
