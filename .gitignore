@@ -1,0 +1,87 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+
+# PyInstaller
+*.spec
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Byte-compiled
+*.pyc
+
+# ==========================
+# Project Specific (DSL)
+# ==========================
+# Token dumps, test outputs, debug dumps
+*.tokens.txt
+*.ast.json
+*.log
+
+# Sample output files (generated quizzes or exports)
+examples/*.out
+examples/*.json
+examples/*.txt
+
+# ==========================
+# Web App (Flask + static)
+# ==========================
+web/static/*.cache
+web/static/*.bak
+web/static/*.map
+
+# Node 
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ==========================
+# IDE / Editor
+# ==========================
+# VSCode
+.vscode/
+.history/
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# ==========================
+# OS / Misc
+# ==========================
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ==========================
+# Qodo AI tools
+# ==========================
+.qodo/state/
+.qodo/tmp/
+.qodo/cache/
+.qodo/*.log
+
+# ==========================
+# Env / Secrets
+# ==========================
+.env
+.env.*
+*.key
+*.pem
+*.cert
+*.crt
