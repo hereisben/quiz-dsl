@@ -5,12 +5,12 @@ from typing import List
 
 KEYWORDS = {
     "quiz": "QUIZ",
-    "TITLE": "TITLE",
+    "title": "TITLE",
     "description": "DESCRIPTION",
     "question": "QUESTION",
-    "TEXT": "TEXT",
-    "CHOICE": "CHOICE",
-    "ANSWER": "ANSWER",
+    "text": "TEXT",
+    "choice": "CHOICE",
+    "answer": "ANSWER",
     "difficulty": "DIFFICULTY",
     "tag": "TAG",
 }

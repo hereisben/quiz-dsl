@@ -1,16 +1,18 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from token import OP
 from typing import List, Optional, Union
 
 # AST Node Definitions
 @dataclass
 class QuestionNode: # AST Node for a question
     text: str
-    choices: List[str]
     answer: int
-    difficulty: str
-    tags: List[str]
+    choices: List[str] = field(default_factory=list)
+    tags: List[str] = field(default_factory=list)
+    difficulty: Optional[str] = None
 
+@dataclass
 class QuizNode: # AST Node for a quiz
-    title: Optional[str] # Optional title of the quiz
-    description: Optional[str] # Optional description of the quiz
-    questions: List[QuestionNode] # List of questions in the quiz
+    questions: List[QuestionNode] = field(default_factory=list) # List of questions in the quiz
+    title: Optional[str] = None # Optional title of the quiz
+    description: Optional[str] = None # Optional description of the quiz

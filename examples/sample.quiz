@@ -1,17 +1,23 @@
 quiz {
-  title: "...";
-  description: "...";
+    title: "Basic Python Quiz";
+    description: "A simple test to check Python fundamentals.";
 
-  question {
-    text: "...";
-    choice: "...";
-    choice: "...";
-    answer: 1;
-    difficulty: "easy";
-    tag: "...";
-  }
+    question {
+        text: "What is the output of print(2 + 3)?";
+        choice: "4";
+        choice: "5";
+        answer: 2;
+        difficulty: "easy";
+        tag: "python";
+        tag: "math";
+    }
 
-  question {
-    ...
-  }
+    question {
+        text: "What data type is [1, 2, 3] in Python?";
+        choice: "list";
+        choice: "array";
+        choice: "tuple";
+        answer: 1;
+        difficulty: "medium";
+    }
 }
